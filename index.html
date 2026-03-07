@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tereré e Modão | Erva Mate 30g com Bomba Biodegradável</title>
+  <meta name="description" content="Tereré e Modão em Água Fria de Goiás. Erva Mate 30g com bomba biodegradável, sabores variados, entrega e retirada com atendimento pelo WhatsApp.">
+  <meta name="keywords" content="tereré e modão, erva mate 30g, bomba biodegradável, tereré em água fria de goiás, menta fogo, menta uva, abacaxi com hortelã, pura folha, ice cerveja">
+  <meta name="author" content="Tereré e Modão">
+  <meta name="theme-color" content="#5d7a34">
+
+  <!--
+    ========================================
+    SITE ESTÁTICO EM HTML + CSS + JS PURO
+    ========================================
+    COMO EDITAR ESTE SITE:
+    1) Os textos principais, links, sabores e contatos estão no arquivo script.js
+    2) As cores e estilos estão no arquivo style.css
+    3) As seções ficam neste arquivo index.html
+    4) As imagens ficam dentro da pasta /img
+    ========================================
+  -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Overlay usado no menu mobile -->
+  <div class="menu-overlay" id="menuOverlay" aria-hidden="true"></div>
+
+  <!-- Cabeçalho fixo -->
+  <header class="site-header" id="topo">
+    <div class="container header-wrap">
+      <a href="#inicio" class="brand" aria-label="Ir para o início">
+        <span class="brand-mark">TM</span>
+        <div>
+          <strong>Tereré e Modão</strong>
+          <small>Erva mate 30g</small>
+        </div>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="menuMobile" aria-label="Abrir menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="desktop-nav" aria-label="Menu principal">
+        <a href="#beneficios">Benefícios</a>
+        <a href="#kit">O que vem</a>
+        <a href="#sabores">Sabores</a>
+        <a href="#preparo">Como usar</a>
+        <a href="#galeria">Galeria</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contato">Contato</a>
+      </nav>
+
+      <a class="header-cta btn btn-primary btn-small js-whatsapp-link" href="#" data-message="Olá! Quero comprar o Tereré e Modão.">
+        Pedir no WhatsApp
+      </a>
+    </div>
+
+    <nav class="mobile-nav" id="menuMobile" aria-label="Menu mobile">
+      <a href="#beneficios">Benefícios</a>
+      <a href="#kit">O que vem</a>
+      <a href="#sabores">Sabores</a>
+      <a href="#preparo">Como usar</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO: seção principal com proposta, preço e imagem -->
+    <section class="hero section" id="inicio">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <div class="eyebrow">
+            <span class="pill">Água Fria de Goiás - GO</span>
+            <span class="pill pill-light">Entrega e retirada</span>
+          </div>
+
+          <h1>Tereré e Modão</h1>
+          <p class="hero-subtitle">Sabor, praticidade e personalidade em cada pacote.</p>
+          <p class="hero-text">
+            Erva Mate <strong>30g</strong> com <strong>bomba biodegradável</strong>, pensada para quem curte um tereré bem gelado,
+            com visual marcante e uma experiência simples de pedir pelo WhatsApp.
+          </p>
+
+          <div class="hero-highlights">
+            <article>
+              <strong id="precoHero">R$ 9,50</strong>
+              <span>Preço por unidade</span>
+            </article>
+            <article>
+              <strong id="saboresHero">5 sabores</strong>
+              <span>Opções disponíveis</span>
+            </article>
+            <article>
+              <strong>Pedido rápido</strong>
+              <span>Resposta pelo WhatsApp</span>
+            </article>
+          </div>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary js-whatsapp-link" href="#" data-message="Olá! Quero comprar o Tereré e Modão.">Comprar agora</a>
+            <a class="btn btn-secondary" href="#sabores">Ver sabores</a>
+          </div>
+
+          <ul class="hero-bullets" aria-label="Destaques do produto">
+            <li>Bomba biodegradável</li>
+            <li>Erva Mate 30g</li>
+            <li>Ideal para levar no dia a dia</li>
+          </ul>
+        </div>
+
+        <div class="hero-media reveal delay-1">
+          <div class="hero-card">
+            <img src="img/produto-destaque.jpeg" alt="Embalagem do Tereré e Modão em destaque, mostrando o rótulo do produto" class="hero-image">
+            <div class="hero-badge">
+              <span class="badge-label">A partir de</span>
+              <strong id="precoCard">R$ 9,50</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BENEFÍCIOS -->
+    <section class="section section-alt" id="beneficios">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="section-kicker">Por que escolher</span>
+          <h2>Um produto pensado para vender bem e agradar quem compra</h2>
+          <p>
+            O Tereré e Modão une apresentação bonita, praticidade no consumo e sabores que combinam com o clima,
+            a rotina e a resenha.
+          </p>
+        </div>
+
+        <div class="benefits-grid" id="benefitsGrid">
+          <!-- Cards montados via JavaScript para facilitar edição -->
+        </div>
+      </div>
+    </section>
+
+    <!-- O QUE VEM -->
+    <section class="section" id="kit">
+      <div class="container split-layout">
+        <div class="split-media reveal">
+          <img src="img/produto-praia.jpeg" alt="Embalagem do Tereré e Modão posicionada na areia da praia" class="rounded-image">
+        </div>
+
+        <div class="split-copy reveal delay-1">
+          <span class="section-kicker">O que vem no pacote</span>
+          <h2>O essencial para uma experiência prática e marcante</h2>
+          <p>
+            Cada unidade foi apresentada de forma simples e bonita, ideal para quem quer experimentar,
+            vender, presentear ou levar para qualquer lugar.
+          </p>
+
+          <div class="check-list" id="kitList">
+            <!-- Itens do kit montados via JavaScript -->
+          </div>
+
+          <div class="price-panel">
+            <small>Valor atual informado</small>
+            <strong id="precoKit">R$ 9,50</strong>
+            <span>Consulte disponibilidade de sabores no WhatsApp</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SABORES -->
+    <section class="section section-alt" id="sabores">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="section-kicker">Sabores disponíveis</span>
+          <h2>Escolha o sabor que combina com o seu momento</h2>
+          <p>
+            A proposta mistura opção tradicional com sabores refrescantes e marcantes. Se algum sabor acabar,
+            é só confirmar no WhatsApp antes de fechar o pedido.
+          </p>
+        </div>
+
+        <div class="flavors-grid reveal delay-1" id="flavorsGrid">
+          <!-- Sabores criados via JavaScript -->
+        </div>
+
+        <div class="flavor-action reveal delay-2">
+          <label for="flavorSelect" class="field-label">Selecione um sabor para pedir no WhatsApp</label>
+          <div class="flavor-bar">
+            <select id="flavorSelect" class="field-select" aria-label="Escolher sabor">
+              <option value="">Escolha um sabor</option>
+            </select>
+            <a href="#" class="btn btn-primary" id="flavorWhatsappButton">Pedir sabor</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMO PREPARAR -->
+    <section class="section" id="preparo">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="section-kicker">Como usar</span>
+          <h2>Passo a passo simples para apresentar no site</h2>
+          <p>
+            Esta seção ajuda quem está chegando agora a entender rápido a proposta do produto.
+          </p>
+        </div>
+
+        <div class="steps-grid" id="stepsGrid">
+          <!-- Etapas preenchidas via JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERIA -->
+    <section class="section section-alt" id="galeria">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="section-kicker">Galeria</span>
+          <h2>Fotos reais para valorizar o produto</h2>
+          <p>
+            As imagens ajudam a vender a experiência. Aqui o produto aparece em cenário urbano, campo e praia.
+          </p>
+        </div>
+
+        <div class="gallery-grid reveal delay-1">
+          <figure class="gallery-card gallery-card-large">
+            <img src="img/produto-destaque.jpeg" alt="Pacote do Tereré e Modão em uma mesa com iluminação aconchegante">
+            <figcaption>Produto em destaque com foco no rótulo</figcaption>
+          </figure>
+          <figure class="gallery-card">
+            <img src="img/produto-campo.jpeg" alt="Tereré e Modão ao lado de um cooler em ambiente de campo">
+            <figcaption>Clima de campo e resenha</figcaption>
+          </figure>
+          <figure class="gallery-card">
+            <img src="img/produto-praia.jpeg" alt="Tereré e Modão na praia, apoiado na areia">
+            <figcaption>Visual refrescante para dias quentes</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROVA SOCIAL / INSTAGRAM -->
+    <section class="section" id="social">
+      <div class="container social-grid">
+        <div class="social-copy reveal">
+          <span class="section-kicker">Instagram e confiança</span>
+          <h2>Espaço pronto para seus prints e provas sociais</h2>
+          <p>
+            Como você ainda não enviou os prints do Instagram, esta área já ficou montada para receber bio,
+            destaques, depoimentos e publicações reais da marca.
+          </p>
+          <ul class="social-points">
+            <li>Adicionar print da bio da marca</li>
+            <li>Adicionar print de destaque ou postagem</li>
+            <li>Adicionar depoimento real de cliente</li>
+          </ul>
+          <div class="social-actions">
+            <a href="#contato" class="btn btn-secondary">Editar depois</a>
+            <a href="#" class="btn btn-primary js-instagram-link">Seguir no Instagram</a>
+          </div>
+        </div>
+
+        <div class="social-cards reveal delay-1">
+          <article class="placeholder-card">
+            <span class="placeholder-tag">Print 01</span>
+            <strong>Bio do Instagram</strong>
+            <p>Substitua aqui por um print real com @, descrição e link da bio.</p>
+          </article>
+          <article class="placeholder-card">
+            <span class="placeholder-tag">Print 02</span>
+            <strong>Post ou destaque</strong>
+            <p>Use um print de foto, promoção, sabores disponíveis ou bastidor.</p>
+          </article>
+          <article class="placeholder-card">
+            <span class="placeholder-tag">Print 03</span>
+            <strong>Depoimento</strong>
+            <p>Inclua avaliação real de cliente para aumentar confiança e conversão.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section-alt" id="faq">
+      <div class="container faq-layout">
+        <div class="section-heading reveal faq-heading">
+          <span class="section-kicker">FAQ</span>
+          <h2>Perguntas frequentes que ajudam a vender</h2>
+          <p>
+            Respostas rápidas reduzem dúvidas e fazem a pessoa avançar para o WhatsApp com mais segurança.
+          </p>
+        </div>
+
+        <div class="faq-list reveal delay-1" id="faqList">
+          <!-- FAQ gerado via JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="section" id="cta-final">
+      <div class="container">
+        <div class="cta-box reveal">
+          <span class="section-kicker">Pedido rápido</span>
+          <h2>Escolha seu sabor e peça agora pelo WhatsApp</h2>
+          <p>
+            Atendimento em <strong>Água Fria de Goiás - GO</strong>, com opção de entrega e retirada.
+            O pedido pode ser confirmado em poucos cliques.
+          </p>
+          <div class="cta-actions">
+            <a href="#" class="btn btn-primary js-whatsapp-link" data-message="Olá! Quero fazer meu pedido do Tereré e Modão.">Quero experimentar</a>
+            <a href="#sabores" class="btn btn-secondary">Ver sabores</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section class="section section-alt" id="contato">
+      <div class="container contact-grid">
+        <div class="contact-info reveal">
+          <span class="section-kicker">Contato</span>
+          <h2>Fale direto com a marca</h2>
+          <p>
+            Use o WhatsApp como canal principal para fechar pedido, consultar sabores, entrega,
+            retirada e formas de pagamento.
+          </p>
+
+          <div class="contact-cards">
+            <article class="contact-card">
+              <strong>WhatsApp</strong>
+              <p id="contactWhatsappText">+55 99900-2915</p>
+            </article>
+            <article class="contact-card">
+              <strong>Local</strong>
+              <p id="contactLocationText">Água Fria de Goiás - GO</p>
+            </article>
+            <article class="contact-card">
+              <strong>Instagram</strong>
+              <p id="contactInstagramText">[INSERIR_INSTAGRAM]</p>
+            </article>
+          </div>
+        </div>
+
+        <!--
+          Formulário simples.
+          Este formulário não envia para um servidor.
+          O JavaScript transforma os dados digitados em uma mensagem para o WhatsApp.
+        -->
+        <form class="contact-form reveal delay-1" id="contactForm">
+          <label class="field-group">
+            <span class="field-label">Nome</span>
+            <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+          </label>
+
+          <label class="field-group">
+            <span class="field-label">WhatsApp</span>
+            <input type="tel" id="telefone" name="telefone" placeholder="Seu número" required>
+          </label>
+
+          <label class="field-group">
+            <span class="field-label">Mensagem</span>
+            <textarea id="mensagem" name="mensagem" rows="5" placeholder="Ex.: Quero 3 unidades do sabor Menta Fogo"></textarea>
+          </label>
+
+          <button type="submit" class="btn btn-primary btn-full">Enviar pelo WhatsApp</button>
+          <p class="form-note">Ao clicar, a mensagem será aberta no WhatsApp para você confirmar o envio.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>Tereré e Modão</h3>
+        <p>
+          Site em HTML, CSS e JS puro, feito para ser simples de editar,
+          abrir direto no navegador e usar como base de vendas.
+        </p>
+      </div>
+
+      <div>
+        <h4>Links rápidos</h4>
+        <ul>
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#sabores">Sabores</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Políticas</h4>
+        <ul>
+          <li><button type="button" class="footer-modal-button" data-modal-target="privacyModal">Política de Privacidade</button></li>
+          <li><button type="button" class="footer-modal-button" data-modal-target="termsModal">Termos de Uso</button></li>
+          <li><button type="button" class="footer-modal-button" data-modal-target="exchangeModal">Trocas e devoluções</button></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Contato</h4>
+        <ul>
+          <li id="footerWhatsapp">+55 99900-2915</li>
+          <li id="footerLocation">Água Fria de Goiás - GO</li>
+          <li><a href="#" class="js-instagram-link" id="footerInstagram">[INSERIR_INSTAGRAM]</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>© <span id="anoAtual"></span> Tereré e Modão. Todos os direitos reservados.</p>
+      <a href="#topo" class="back-to-top">Voltar ao topo</a>
+    </div>
+  </footer>
+
+  <!-- Botão flutuante do WhatsApp -->
+  <a href="#" class="whatsapp-float js-whatsapp-link" data-message="Olá! Quero pedir o Tereré e Modão." aria-label="Abrir conversa no WhatsApp">
+    <span>WhatsApp</span>
+  </a>
+
+  <!-- Modal: Política de Privacidade -->
+  <div class="modal" id="privacyModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="privacyTitle">
+      <button class="modal-close" type="button" data-close-modal aria-label="Fechar modal">×</button>
+      <h3 id="privacyTitle">Política de Privacidade</h3>
+      <p>
+        Este site usa apenas informações enviadas voluntariamente pelo visitante no formulário de contato.
+        Os dados digitados são usados apenas para abrir uma mensagem no WhatsApp e não ficam armazenados aqui.
+      </p>
+      <p>
+        Caso você integre ferramentas externas no futuro, revise esta política e atualize os textos conforme a sua necessidade.
+      </p>
+    </div>
+  </div>
+
+  <!-- Modal: Termos de Uso -->
+  <div class="modal" id="termsModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="termsTitle">
+      <button class="modal-close" type="button" data-close-modal aria-label="Fechar modal">×</button>
+      <h3 id="termsTitle">Termos de Uso</h3>
+      <p>
+        Este site apresenta informações comerciais do produto Tereré e Modão. Valores, sabores,
+        disponibilidade e condições de entrega podem mudar sem aviso prévio.
+      </p>
+      <p>
+        O pedido só é confirmado após atendimento pelo WhatsApp e alinhamento das condições com a marca.
+      </p>
+    </div>
+  </div>
+
+  <!-- Modal: Trocas e devoluções -->
+  <div class="modal" id="exchangeModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="exchangeTitle">
+      <button class="modal-close" type="button" data-close-modal aria-label="Fechar modal">×</button>
+      <h3 id="exchangeTitle">Trocas e devoluções</h3>
+      <p>
+        Em caso de dúvida sobre pedido, retirada, entrega ou produto recebido, entre em contato pelos canais oficiais.
+      </p>
+      <p>
+        Se você tiver uma política própria com prazos e regras, substitua este texto por suas condições reais.
+      </p>
+    </div>
+  </div>
+
+  <!--
+    JSON-LD para SEO básico de produto.
+    Se você tiver domínio, SKU e Instagram oficial, atualize no script.js.
+  -->
+  <script type="application/ld+json" id="productJsonLd">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Tereré e Modão",
+    "description": "Erva Mate 30g com bomba biodegradável, sabores variados e atendimento em Água Fria de Goiás.",
+    "brand": {
+      "@type": "Brand",
+      "name": "Tereré e Modão"
+    },
+    "category": "Erva mate para tereré",
+    "image": [
+      "img/produto-destaque.jpeg",
+      "img/produto-campo.jpeg",
+      "img/produto-praia.jpeg"
+    ],
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "BRL",
+      "price": "9.50",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>
