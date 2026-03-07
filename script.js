@@ -22,7 +22,7 @@ const siteConfig = {
   nomeProduto: 'Tereré e Modão',
   preco: 'R$ 9,50',
   precoNumero: '9.50',
-  whatsappNumero: '55999002915',
+  whatsappNumero: '999002915',
   whatsappTextoPadrao: 'Olá! Quero comprar o Tereré e Modão.',
   localizacao: 'Água Fria de Goiás - GO',
   atendimento: 'Entrega e retirada',
