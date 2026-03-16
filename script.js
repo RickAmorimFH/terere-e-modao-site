@@ -24,7 +24,7 @@ const siteConfig = {
   preco: 'R$ 9,50',
   precoNumero: '9.50',
   // Formato esperado: DDI + DDD + número, tudo sem símbolos.
-  whatsappNumero: '5561999002915',
+  whatsappNumero: '5562999002915',
   whatsappTextoPadrao: 'Olá! Quero comprar o Tereré e Modão.',
   localizacao: 'Água Fria de Goiás - GO',
   atendimento: 'Entrega e retirada',
@@ -196,7 +196,7 @@ function preencherInformacoesBasicas() {
 /*
   Formata o número para ficar bonito na tela.
   Exemplos:
-  - 5561999002915 -> +55 (61) 99900-2915
+  - 5562999002915 -> +55 (61) 99900-2915
   - 61999002915 -> (61) 99900-2915
 */
 function formatarWhatsapp(numero) {
