@@ -9,6 +9,17 @@
   <meta name="author" content="Tereré e Modão">
   <meta name="theme-color" content="#5d7a34">
 
+  <!-- Metas para compartilhamento -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Tereré e Modão | Erva Mate 30g" data-dynamic-meta="og:title">
+  <meta property="og:description" content="Erva Mate 30g com bomba biodegradável e pedido rápido pelo WhatsApp." data-dynamic-meta="og:description">
+  <meta property="og:image" content="img/produto-destaque.jpeg" data-dynamic-meta="og:image">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Tereré e Modão | Erva Mate 30g">
+  <meta name="twitter:description" content="Erva Mate 30g com bomba biodegradável e pedido rápido pelo WhatsApp.">
+  <meta name="twitter:image" content="img/produto-destaque.jpeg" data-dynamic-meta="twitter:image">
+
   <!--
     ========================================
     SITE ESTÁTICO EM HTML + CSS + JS PURO
@@ -27,6 +38,8 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <a class="skip-link" href="#inicio">Pular para o conteúdo</a>
+
   <!-- Overlay usado no menu mobile -->
   <div class="menu-overlay" id="menuOverlay" aria-hidden="true"></div>
 
@@ -151,7 +164,7 @@
     <section class="section" id="kit">
       <div class="container split-layout">
         <div class="split-media reveal">
-          <img src="img/produto-praia.jpeg" alt="Embalagem do Tereré e Modão posicionada na areia da praia" class="rounded-image">
+          <img src="img/produto-praia.jpeg" alt="Embalagem do Tereré e Modão posicionada na areia da praia" class="rounded-image" loading="lazy">
         </div>
 
         <div class="split-copy reveal delay-1">
@@ -227,21 +240,21 @@
           <span class="section-kicker">Galeria</span>
           <h2>Fotos reais para valorizar o produto</h2>
           <p>
-            As imagens ajudam a vender a experiência. Aqui o produto aparece em cenário urbano, campo e praia.
+            As imagens ajudam a vender a experiência. Aqui o produto aparece em destaque, no campo e na praia.
           </p>
         </div>
 
         <div class="gallery-grid reveal delay-1">
           <figure class="gallery-card gallery-card-large">
-            <img src="img/produto-destaque.jpeg" alt="Pacote do Tereré e Modão em uma mesa com iluminação aconchegante">
+            <img src="img/produto-destaque.jpeg" alt="Pacote do Tereré e Modão em uma mesa com iluminação aconchegante" loading="lazy">
             <figcaption>Produto em destaque com foco no rótulo</figcaption>
           </figure>
           <figure class="gallery-card">
-            <img src="img/produto-campo.jpeg" alt="Tereré e Modão ao lado de um cooler em ambiente de campo">
+            <img src="img/produto-campo.jpeg" alt="Tereré e Modão ao lado de um cooler em ambiente de campo" loading="lazy">
             <figcaption>Clima de campo e resenha</figcaption>
           </figure>
           <figure class="gallery-card">
-            <img src="img/produto-praia.jpeg" alt="Tereré e Modão na praia, apoiado na areia">
+            <img src="img/produto-praia.jpeg" alt="Tereré e Modão na praia, apoiado na areia" loading="lazy">
             <figcaption>Visual refrescante para dias quentes</figcaption>
           </figure>
         </div>
@@ -255,7 +268,7 @@
           <span class="section-kicker">Instagram e confiança</span>
           <h2>Espaço pronto para seus prints e provas sociais</h2>
           <p>
-            Como você ainda não enviou os prints do Instagram, esta área já ficou montada para receber bio,
+            Como os prints do Instagram ainda não foram adicionados, esta área ficou preparada para receber bio,
             destaques, depoimentos e publicações reais da marca.
           </p>
           <ul class="social-points">
@@ -283,7 +296,7 @@
           <article class="placeholder-card">
             <span class="placeholder-tag">Print 03</span>
             <strong>Depoimento</strong>
-            <p>Inclua avaliação real de cliente para aumentar confiança e conversão.</p>
+            <p>Inclua avaliação real, feedback de cliente ou print de conversa autorizada.</p>
           </article>
         </div>
       </div>
@@ -292,33 +305,32 @@
     <!-- FAQ -->
     <section class="section section-alt" id="faq">
       <div class="container faq-layout">
-        <div class="section-heading reveal faq-heading">
-          <span class="section-kicker">FAQ</span>
-          <h2>Perguntas frequentes que ajudam a vender</h2>
+        <div class="section-heading reveal">
+          <span class="section-kicker">Dúvidas frequentes</span>
+          <h2>Respostas rápidas para reduzir dúvidas e aumentar a conversão</h2>
           <p>
-            Respostas rápidas reduzem dúvidas e fazem a pessoa avançar para o WhatsApp com mais segurança.
+            Preço, sabores, entrega, retirada e pedido no WhatsApp são os pontos mais importantes para o visitante.
           </p>
         </div>
 
         <div class="faq-list reveal delay-1" id="faqList">
-          <!-- FAQ gerado via JavaScript -->
+          <!-- FAQ criado via JavaScript -->
         </div>
       </div>
     </section>
 
     <!-- CTA FINAL -->
-    <section class="section" id="cta-final">
+    <section class="section">
       <div class="container">
         <div class="cta-box reveal">
           <span class="section-kicker">Pedido rápido</span>
-          <h2>Escolha seu sabor e peça agora pelo WhatsApp</h2>
+          <h2>Escolha seu sabor e fale agora pelo WhatsApp</h2>
           <p>
-            Atendimento em <strong>Água Fria de Goiás - GO</strong>, com opção de entrega e retirada.
-            O pedido pode ser confirmado em poucos cliques.
+            Atendimento com entrega e retirada em Água Fria de Goiás - GO. Confirme sabor, quantidade e condições direto pelo atendimento.
           </p>
           <div class="cta-actions">
-            <a href="#" class="btn btn-primary js-whatsapp-link" data-message="Olá! Quero fazer meu pedido do Tereré e Modão.">Quero experimentar</a>
-            <a href="#sabores" class="btn btn-secondary">Ver sabores</a>
+            <a href="#" class="btn btn-primary js-whatsapp-link" data-message="Olá! Quero pedir o Tereré e Modão.">Pedir agora</a>
+            <a href="#sabores" class="btn btn-secondary">Ver sabores novamente</a>
           </div>
         </div>
       </div>
@@ -329,51 +341,46 @@
       <div class="container contact-grid">
         <div class="contact-info reveal">
           <span class="section-kicker">Contato</span>
-          <h2>Fale direto com a marca</h2>
+          <h2>Fale com a marca e combine seu pedido</h2>
           <p>
-            Use o WhatsApp como canal principal para fechar pedido, consultar sabores, entrega,
-            retirada e formas de pagamento.
+            Use o WhatsApp para pedir, tirar dúvidas, confirmar sabores e alinhar entrega ou retirada.
           </p>
 
           <div class="contact-cards">
             <article class="contact-card">
               <strong>WhatsApp</strong>
-              <p id="contactWhatsappText">+55 99900-2915</p>
+              <p id="contactWhatsappText">+55 (61) 99900-2915</p>
             </article>
             <article class="contact-card">
-              <strong>Local</strong>
+              <strong>Localização</strong>
               <p id="contactLocationText">Água Fria de Goiás - GO</p>
             </article>
             <article class="contact-card">
               <strong>Instagram</strong>
-              <p id="contactInstagramText">[INSERIR_INSTAGRAM]</p>
+              <p><a href="#" class="js-instagram-link" id="contactInstagramText">[INSERIR_INSTAGRAM]</a></p>
             </article>
           </div>
         </div>
 
-        <!--
-          Formulário simples.
-          Este formulário não envia para um servidor.
-          O JavaScript transforma os dados digitados em uma mensagem para o WhatsApp.
-        -->
         <form class="contact-form reveal delay-1" id="contactForm">
           <label class="field-group">
-            <span class="field-label">Nome</span>
-            <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+            <span class="field-label">Seu nome</span>
+            <input type="text" id="nome" name="nome" placeholder="Digite seu nome">
           </label>
 
           <label class="field-group">
-            <span class="field-label">WhatsApp</span>
-            <input type="tel" id="telefone" name="telefone" placeholder="Seu número" required>
+            <span class="field-label">Seu WhatsApp</span>
+            <input type="text" id="telefone" name="telefone" placeholder="Ex.: (61) 99900-2915">
           </label>
 
           <label class="field-group">
             <span class="field-label">Mensagem</span>
-            <textarea id="mensagem" name="mensagem" rows="5" placeholder="Ex.: Quero 3 unidades do sabor Menta Fogo"></textarea>
+            <textarea id="mensagem" name="mensagem" placeholder="Ex.: Quero 3 unidades do sabor Menta Fogo"></textarea>
           </label>
 
           <button type="submit" class="btn btn-primary btn-full">Enviar pelo WhatsApp</button>
           <p class="form-note">Ao clicar, a mensagem será aberta no WhatsApp para você confirmar o envio.</p>
+          <p class="form-feedback" id="formFeedback" aria-live="polite"></p>
         </form>
       </div>
     </section>
@@ -412,7 +419,7 @@
       <div>
         <h4>Contato</h4>
         <ul>
-          <li id="footerWhatsapp">+55 99900-2915</li>
+          <li id="footerWhatsapp">+55 (61) 99900-2915</li>
           <li id="footerLocation">Água Fria de Goiás - GO</li>
           <li><a href="#" class="js-instagram-link" id="footerInstagram">[INSERIR_INSTAGRAM]</a></li>
         </ul>

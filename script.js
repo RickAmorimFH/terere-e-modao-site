@@ -14,7 +14,8 @@
 
   IMPORTANTE:
   - O WhatsApp deve ficar apenas com números.
-  - Se faltar DDD no número, ajuste aqui.
+  - Neste projeto eu deixei o número com DDI + DDD + telefone.
+  - Se o DDD correto não for 61, altere apenas o valor abaixo.
   ========================================
 */
 
@@ -22,7 +23,8 @@ const siteConfig = {
   nomeProduto: 'Tereré e Modão',
   preco: 'R$ 9,50',
   precoNumero: '9.50',
-  whatsappNumero: '999002915',
+  // Formato esperado: DDI + DDD + número, tudo sem símbolos.
+  whatsappNumero: '5561999002915',
   whatsappTextoPadrao: 'Olá! Quero comprar o Tereré e Modão.',
   localizacao: 'Água Fria de Goiás - GO',
   atendimento: 'Entrega e retirada',
@@ -146,12 +148,20 @@ const siteConfig = {
 };
 
 /*
-  Função utilitária para criar link do WhatsApp.
-  Recebe o texto da mensagem e devolve a URL pronta.
+  Remove tudo que não for número.
+  Isso evita bug se alguém colar +, espaço, traço ou parênteses.
+*/
+function normalizarNumero(numero) {
+  return String(numero || '').replace(/\D/g, '');
+}
+
+/*
+  Cria link seguro do WhatsApp usando o número normalizado.
 */
 function criarLinkWhatsapp(mensagem) {
+  const numero = normalizarNumero(siteConfig.whatsappNumero);
   const texto = encodeURIComponent(mensagem || siteConfig.whatsappTextoPadrao);
-  return `https://wa.me/${siteConfig.whatsappNumero}?text=${texto}`;
+  return `https://wa.me/${numero}?text=${texto}`;
 }
 
 /*
@@ -184,11 +194,23 @@ function preencherInformacoesBasicas() {
 }
 
 /*
-  Formata o número do WhatsApp para exibir melhor no site.
-  Caso você queira outro formato, altere esta função.
+  Formata o número para ficar bonito na tela.
+  Exemplos:
+  - 5561999002915 -> +55 (61) 99900-2915
+  - 61999002915 -> (61) 99900-2915
 */
 function formatarWhatsapp(numero) {
-  return `+${numero.slice(0, 2)} ${numero.slice(2)}`;
+  const limpo = normalizarNumero(numero);
+
+  if (limpo.length === 13) {
+    return `+${limpo.slice(0, 2)} (${limpo.slice(2, 4)}) ${limpo.slice(4, 9)}-${limpo.slice(9)}`;
+  }
+
+  if (limpo.length === 11) {
+    return `(${limpo.slice(0, 2)}) ${limpo.slice(2, 7)}-${limpo.slice(7)}`;
+  }
+
+  return numero;
 }
 
 /*
@@ -238,6 +260,13 @@ function renderizarSabores() {
       <h3>${sabor.nome}</h3>
       <p>${sabor.descricao}</p>
       <small>Peça este sabor pelo WhatsApp</small>
+      <a
+        href="${criarLinkWhatsapp(`Olá! Quero pedir o Tereré e Modão no sabor ${sabor.nome}.`)}"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn-secondary btn-flavor"
+        aria-label="Pedir sabor ${sabor.nome} pelo WhatsApp"
+      >Pedir este sabor</a>
     </article>
   `).join('');
 
@@ -328,12 +357,19 @@ function configurarLinksWhatsapp() {
 */
 function configurarLinksInstagram() {
   document.querySelectorAll('.js-instagram-link').forEach(link => {
-    link.setAttribute('href', siteConfig.instagramLink || '#');
+    const href = siteConfig.instagramLink || '#';
+    link.setAttribute('href', href);
 
-    if (siteConfig.instagramLink && siteConfig.instagramLink !== '#') {
+    if (href !== '#') {
       link.setAttribute('target', '_blank');
       link.setAttribute('rel', 'noopener noreferrer');
+      link.classList.remove('is-disabled');
+      link.removeAttribute('aria-disabled');
+      return;
     }
+
+    link.classList.add('is-disabled');
+    link.setAttribute('aria-disabled', 'true');
   });
 }
 
@@ -352,6 +388,7 @@ function configurarMenuMobile() {
     mobileNav.classList.remove('is-open');
     overlay.classList.remove('is-visible');
     menuToggle.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('menu-open');
   }
 
   menuToggle.addEventListener('click', () => {
@@ -360,6 +397,7 @@ function configurarMenuMobile() {
     mobileNav.classList.toggle('is-open', abrir);
     overlay.classList.toggle('is-visible', abrir);
     menuToggle.setAttribute('aria-expanded', String(abrir));
+    document.body.classList.toggle('menu-open', abrir);
   });
 
   overlay.addEventListener('click', fecharMenu);
@@ -367,7 +405,18 @@ function configurarMenuMobile() {
 }
 
 /*
-  Formulário: transforma os dados em mensagem pronta para WhatsApp.
+  Exibe uma mensagem de feedback no formulário sem usar alert.
+*/
+function mostrarFeedbackFormulario(texto, tipo = 'erro') {
+  const feedback = document.getElementById('formFeedback');
+  if (!feedback) return;
+
+  feedback.textContent = texto;
+  feedback.className = `form-feedback is-${tipo}`;
+}
+
+/*
+  Formulário: valida os campos e transforma os dados em mensagem pronta para WhatsApp.
 */
 function configurarFormulario() {
   const form = document.getElementById('contactForm');
@@ -379,11 +428,24 @@ function configurarFormulario() {
     const nome = document.getElementById('nome').value.trim();
     const telefone = document.getElementById('telefone').value.trim();
     const mensagem = document.getElementById('mensagem').value.trim();
+    const telefoneClienteLimpo = normalizarNumero(telefone);
+
+    if (!nome) {
+      mostrarFeedbackFormulario('Digite seu nome para continuar.');
+      return;
+    }
+
+    if (!telefoneClienteLimpo || telefoneClienteLimpo.length < 10) {
+      mostrarFeedbackFormulario('Digite seu WhatsApp com DDD para continuar.');
+      return;
+    }
+
+    mostrarFeedbackFormulario('Abrindo o WhatsApp para você confirmar a mensagem...', 'sucesso');
 
     const texto = [
       'Olá! Vim pelo site do Tereré e Modão.',
-      nome ? `Nome: ${nome}` : '',
-      telefone ? `Meu WhatsApp: ${telefone}` : '',
+      `Nome: ${nome}`,
+      `Meu WhatsApp: ${telefone}`,
       mensagem ? `Mensagem: ${mensagem}` : ''
     ].filter(Boolean).join('\n');
 
@@ -398,23 +460,37 @@ function configurarModais() {
   const botoesAbrir = document.querySelectorAll('[data-modal-target]');
   const botoesFechar = document.querySelectorAll('[data-close-modal]');
 
+  function abrirModal(modal) {
+    if (!modal) return;
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('modal-open');
+  }
+
+  function fecharModal(modal) {
+    if (!modal) return;
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('modal-open');
+  }
+
   botoesAbrir.forEach(botao => {
     botao.addEventListener('click', () => {
       const modal = document.getElementById(botao.dataset.modalTarget);
-      if (modal) modal.classList.add('is-open');
+      abrirModal(modal);
     });
   });
 
   botoesFechar.forEach(botao => {
     botao.addEventListener('click', () => {
       const modal = botao.closest('.modal');
-      if (modal) modal.classList.remove('is-open');
+      fecharModal(modal);
     });
   });
 
   document.addEventListener('keydown', event => {
     if (event.key === 'Escape') {
-      document.querySelectorAll('.modal.is-open').forEach(modal => modal.classList.remove('is-open'));
+      document.querySelectorAll('.modal.is-open').forEach(modal => fecharModal(modal));
     }
   });
 }
@@ -424,7 +500,7 @@ function configurarModais() {
 */
 function configurarReveal() {
   const elementos = document.querySelectorAll('.reveal');
-  if (!('IntersectionObserver' in window)) {
+  if (!("IntersectionObserver" in window)) {
     elementos.forEach(el => el.classList.add('is-visible'));
     return;
   }
@@ -439,6 +515,22 @@ function configurarReveal() {
   }, { threshold: 0.12 });
 
   elementos.forEach(el => observer.observe(el));
+}
+
+/*
+  Atualiza meta tags para compartilhamento e SEO básico.
+*/
+function atualizarMetaCompartilhamento() {
+  const primeiraImagem = siteConfig.imagens[0] || 'img/produto-destaque.jpeg';
+  const descricao = `${siteConfig.nomeProduto} em ${siteConfig.localizacao}. Erva Mate 30g com bomba biodegradável e pedido rápido pelo WhatsApp.`;
+
+  const metaDescription = document.querySelector('meta[name="description"]');
+  if (metaDescription) metaDescription.setAttribute('content', descricao);
+
+  document.querySelectorAll('[data-dynamic-meta="og:title"]').forEach(meta => meta.setAttribute('content', `${siteConfig.nomeProduto} | Erva Mate 30g`));
+  document.querySelectorAll('[data-dynamic-meta="og:description"]').forEach(meta => meta.setAttribute('content', descricao));
+  document.querySelectorAll('[data-dynamic-meta="og:image"]').forEach(meta => meta.setAttribute('content', primeiraImagem));
+  document.querySelectorAll('[data-dynamic-meta="twitter:image"]').forEach(meta => meta.setAttribute('content', primeiraImagem));
 }
 
 /*
@@ -486,6 +578,7 @@ function init() {
   configurarFormulario();
   configurarModais();
   configurarReveal();
+  atualizarMetaCompartilhamento();
   atualizarJsonLd();
 }
 

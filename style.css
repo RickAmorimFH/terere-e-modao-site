@@ -54,6 +54,38 @@ body {
   line-height: 1.6;
 }
 
+
+body.menu-open,
+body.modal-open {
+  overflow: hidden;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -48px;
+  z-index: 60;
+  background: #fff;
+  color: var(--color-text);
+  padding: 0.7rem 1rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow-soft);
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid rgba(93, 122, 52, 0.28);
+  outline-offset: 2px;
+}
+
 img {
   max-width: 100%;
   display: block;
@@ -1009,5 +1041,40 @@ button {
   .whatsapp-float {
     right: 0.85rem;
     bottom: 0.85rem;
+  }
+}
+
+
+.btn-flavor {
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.js-instagram-link.is-disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.form-feedback {
+  min-height: 1.3rem;
+  margin: 0;
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.form-feedback.is-erro {
+  color: #b42318;
+}
+
+.form-feedback.is-sucesso {
+  color: var(--color-primary-dark);
+}
+
+@media (max-width: 719px) {
+  .whatsapp-float {
+    left: 1rem;
+    right: 1rem;
+    bottom: 0.85rem;
+    text-align: center;
   }
 }
